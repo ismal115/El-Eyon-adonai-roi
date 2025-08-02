@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/img-index/EYON-ADONAI-ROI.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Inicio - El Eyon Adonai Roi</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/img-nosotros/EYON-ADONAI-ROI.webp" alt="Logo Eyon Adonai Roi">
+            </a>
+        </div>
+                <!-- Botón Hamburguesa -->
+        <button class="hamburger" aria-label="Menú">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Acerca de</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="como-llegar.html">Cómo llegar</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Sección Inicio/Hero - Carrusel -->
+<section id="inicio">
+    <div class="hero-carousel">
+        <!-- Slide 1 - Nosotros -->
+        <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/img-index/nosotros-hero.webp');">
+            <div class="slide-content">
+                <h1>Conoce Nuestra Comunidad</h1>
+                <p>Descubre quiénes somos y qué nos hace una familia en Cristo</p>
+                <a href="nosotros.html" class="btn">Sobre Nosotros</a>
+            </div>
+        </div>
+        
+        <!-- Slide 2 - Eventos -->
+        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/img-index/eventos-hero.webp');">
+            <div class="slide-content">
+                <h1>Vive Experiencias Espirituales</h1>
+                <p>Participa en nuestros eventos y retiros especiales</p>
+                <a href="eventos.html" class="btn">Ver Eventos</a>
+            </div>
+        </div>
+        
+        <!-- Slide 3 - Cómo llegar -->
+        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/img-index/ubicacion-hero.webp');">
+            <div class="slide-content">
+                <h1>Visítanos</h1>
+                <p>Te esperamos en nuestro lugar de reunión</p>
+                <a href="como-llegar.html" class="btn">Cómo Llegar</a>
+            </div>
+        </div>
+        
+        <!-- Controles del carrusel -->
+        <button class="carousel-control prev" aria-label="Slide anterior">&#10094;</button>
+        <button class="carousel-control next" aria-label="Slide siguiente">&#10095;</button>
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Sección Acerca de -->
+<section id="acerca">
+    <h2>Acerca de Nosotros</h2>
+    
+<!-- Primera caja: ¿Qué es? -->
+<div class="about-box">
+    <div class="about-text">
+        <h3>¿Qué es Eyon Adonai Roi?</h3>
+        <p>"Somos la Iglesia Evangélica Pentecostal Eyon Adonai Roi"
+
+Una comunidad de fe arraigada en el amor de Cristo y guiada por el Espíritu Santo. Nuestro nombre que significa "Dios Altísimo, mi Pastor" refleja nuestra esencia: adoradores que buscan la presencia de Dios y discípulos comprometidos con Su Palabra.</p>
+    </div>
+    <div class="about-img">
+        <div class="simple-carousel">
+            <img src="img/img-index/Quienes-somos.webp" alt="Comunidad" class="active">
+            <img src="img/img-index/Quienes-somos-2.webp" alt="Reunión">
+            <img src="img/img-index/Quienes-somos-3.webp" alt="Celebración">
+        </div>
+    </div>
+</div>
+
+
+<!-- Segunda caja: Misión -->
+<div class="about-box">
+    <div class="about-img">
+        <div class="simple-carousel">
+            <img src="img/img-index/Mision.webp" alt="Misión principal" class="active">
+            <img src="img/img-index/Mision-2.webp" alt="Servicio comunitario">
+            <img src="img/img-index/Mision-3.webp" alt="Grupo de oración">
+        </div>
+    </div>
+    <div class="about-text">
+        <h3>Nuestra Misión</h3>
+        <p>Guiar a las personas a un encuentro personal con Cristo, formar discípulos comprometidos y servir a la comunidad con amor y compasión.</p>
+        <p>Buscamos reflejar el carácter de Jesús en todo lo que hacemos, siendo luz y sal en nuestro entorno.</p>
+        
+<!-- Modelo 3 Compacto -->
+<!-- Dentro de tu sección de Misión, reemplaza el div de mision-pillars-compact con este código: -->
+<div class="mision-pillars-compact">
+    <!-- Caja Ayudar -->
+    <div class="pillar-compact">
+        <div class="icon-compact">
+            <svg viewBox="0 0 24 24" fill="#5a8a4a">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+        <h4>Ayudar</h4>
+        <p>Servicio compasivo</p>
+    </div>
+    
+    <!-- Caja Predicar -->
+    <div class="pillar-compact">
+        <div class="icon-compact">
+            <svg viewBox="0 0 24 24" fill="#5a8a4a">
+                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5v18h14V3zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+        </div>
+        <h4>Predicar</h4>
+        <p>Enseñanza bíblica</p>
+    </div>
+    
+    <!-- Caja Expandir -->
+    <div class="pillar-compact">
+        <div class="icon-compact">
+            <svg viewBox="0 0 24 24" fill="#5a8a4a">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+        </div>
+        <h4>Expandir</h4>
+        <p>Crecimiento constante</p>
+    </div>
+</div>
+</div>
+</div>
+<div class="ver-mas">
+    <a href="nosotros.html" class="btn">Ver más sobre nosotros</a>
+</div>
+
+<div class="services-box">
+    <h3>Actividades del Ministerio</h3>
+    <div class="services-container">
+        <!-- Cultos Dominicales -->
+        <div class="service-item">
+            <a href="como-llegar.html#cultos" class="service-link">
+                <div class="service-img-carousel">
+                    <div class="carousel-inner">
+                        <img src="img/img-index/cultos.webp" class="active" alt="Culto dominical">
+                        <img src="img/img-index/cultos2.webp" alt="Celebración">
+                        <img src="img/img-index/cultos3.webp" alt="Alabanza">
+                    </div>
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm-1 13v-4h2v4h-2zm0-6V6h2v3h-2z"/></svg>
+                    </div>
+                    <h4>Cultos Dominicales</h4>
+                    <p>Celebraciones llenas de alabanza, adoración y enseñanza bíblica para toda la familia.</p>
+                </div>
+            </a>
+
+        </div>
+        
+        <!-- Bautismos -->
+        <div class="service-item">
+            <a href="como-llegar.html#bautisos" class="service-link">
+                <div class="service-img-carousel">
+                    <div class="carousel-inner">
+                        <img src="img/img-index/bautisos.webp" class="active" alt="Bautiso">
+                        <img src="img/img-index/bautisos2.webp" alt="Bautiso en agua">
+                        <img src="img/img-index/bautisos3.webp" alt="Gente a bautizar">
+                    </div>
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M12 3a4 4 0 0 0-4 4c0 1.1.9 2 2 2s2-.9 2-2a2 2 0 1 1 4 0v1h2v-1a4 4 0 0 0-4-4zm5 5h-2v1c0 1.1-.9 2-2 2s-2-.9-2-2V8H7v1c0 1.1-.9 2-2 2s-2-.9-2-2V8H1v16h22V8h-4z"/></svg>
+                    </div>
+                    <h4>Bautisos</h4>
+                    <p>Ayudamos a las personas a bautizarse como un acto para aceptar a Cristo de corazón.</p>
+                </div>
+            </a>
+        </div>
+        
+<!--  Danza -->
+        <div class="service-item">
+            <a href="como-llegar.html#danza" class="service-link">
+                <div class="service-img-carousel">
+                    <div class="carousel-inner">
+                        <img src="img/img-index/danza-1.webp" class="active" alt="Grupo de danza adoración">
+                        <img src="img/img-index/danza-2.webp" alt="Ensayo de danza">
+                        <img src="img/img-index/danza-3.webp" alt="Presentación de danza">
+                    </div>
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+                            <path d="M12 2v2.5c0 1.1.9 2 2 2s2-.9 2-2V2h-4zm0 18v-2.5c0-1.1-.9-2-2-2s-2 .9-2 2V20h4zm-7-8.5v-3h18v3H5zm2-5.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm14 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-14 11c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm14 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                    <h4> Danza</h4>
+                    <p>Expresión corporal para adoración con diferentes estilos dancísticos. Formación técnica y espiritual.</p>
+                    
+                </div>
+            </a>
+        </div>
+
+<!--  Música -->
+        <div class="service-item">
+            <a href="como-llegar.html#musica" class="service-link">                <div class="service-img-carousel">
+                    <div class="carousel-inner">
+                        <img src="img/img-index/musica1.webp" class="active" alt="Clase de instrumentos">
+                        <img src="img/img-index/musica2.webp" alt="Ensayo coral">
+                        <img src="img/img-index/musica3.webp" alt="Taller musical">
+                    </div>
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zm-2 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                        </svg>
+                    </div>
+                    <h4> Música</h4>
+                    <p>Formación en instrumentos, canto y teoría musical para el servicio en la adoración colectiva.</p>
+                    
+                </div>
+            </a>
+        </div>
+        
+        <!-- Ayuda Comunitaria -->
+        <div class="service-item">
+            <a href="como-llegar.html#ayuda-comunitaria" class="service-link">
+
+                <div class="service-img-carousel">
+                    <div class="carousel-inner">
+                        <img src="img/img-index/ayuda.webp" class="active" alt="Ayuda comunitaria">
+                        <img src="img/img-index/ayuda2.webp" alt="Distribución">
+                        <img src="img/img-index/ayuda3.webp" alt="Voluntarios">
+                    </div>
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <h4>Ayuda Comunitaria</h4>
+                    <p>Programas de asistencia a familias necesitadas y proyectos de impacto social.</p>
+                    
+                </div>
+            </a>
+        </div>
+        
+            <!-- Escuela Bíblica -->
+            <div class="service-item">
+                <a href="como-llegar.html#escuela-biblica" class="service-link">
+
+                    <div class="service-img-carousel">
+                        <div class="carousel-inner">
+                            <img src="img/img-index/escuela1.webp" class="active" alt="Clase bíblica para adultos">
+                            <img src="img/img-index/escuela2.webp" alt="Estudio bíblico infantil">
+                            <img src="img/img-index/escuela3.webp" alt="Grupo de estudio">
+                        </div>
+                        <div class="carousel-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+                                <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.1C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                                <path d="M17.5 10.5c.88 0 1.73.09 2.5.26V9.24c-.79-.15-1.64-.24-2.5-.24-1.7 0-3.24.29-4.5.83v1.66c1.13-.64 2.7-.99 4.5-.99zM13 12.49v1.66c1.13-.64 2.7-.99 4.5-.99.88 0 1.73.09 2.5.26v-1.52c-.79-.15-1.64-.24-2.5-.24-1.7 0-3.24.3-4.5.83zm4.5 1.84c-1.7 0-3.24.29-4.5.83v1.66c1.13-.64 2.7-.99 4.5-.99.88 0 1.73.09 2.5.26v-1.52c-.79-.16-1.64-.24-2.5-.24z"/>
+                            </svg>
+                        </div>
+                        <h4>Escuela Bíblica</h4>
+                        <p>Programa de formación doctrinal para todas las edades con estudios profundos de la Palabra.</p>
+
+                    </div>
+                </a>
+
+            </div>
+
+    </div>
+        <div class="ver-mas">
+            <a href="como-llegar.html#horarios" class="btn">Ver informacion sobre nuestros horarios</a>
+        </div>
+    </div>
+
+</section>
+<!-- Sección Eventos -->
+<section id="eventos">
+
+<div class="proximos-eventos-destacados">
+    <h3>Proximos Eventos</h3>
+                <!-- Evento 1 - Imagen derecha -->
+            <div class="evento-proximo reverse">
+                <div class="evento-proximo-imagen">
+                    <img src="img/img-index/campamento.webp" alt="Campamento Juvenil">
+                </div>
+                <div class="evento-proximo-contenido">
+                    <span class="fecha-destacada">3 - 6 de Enero</span>
+                    <h4>Campamento Juvenil</h4>
+                    <p>República Dominicana - ¡Prepárate para vivir una experiencia inolvidable! Del 3 al 6 de enero de 2026,
+                    se celebrará un Campamento Juvenil sin precedentes, diseñado especialmente para impactar, inspirar y
+                    renovar a toda una generación. Dándoles herramientas que elimine el problema de contenido de las
+                    redes sociales que los influencia por el contenido del cielo que les dé propósito, identidad y firmeza. 
+                    </p>
+                    <div class="detalles-destacados">
+                        <span><i class="fas fa-clock"></i> Salida: Sabado 3 PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i>Campamento Nazareno</span>
+                        <span><i class="fas fa-money-bill-wave"></i> $4,900 (incluye alojamiento y comidas)</span>
+                    </div>
+                    <div class="acciones-evento">
+                        
+                        <a data-event-target="retiro-espiritual" href="eventos.html#campamento-juvenil" class="btn-destacado">Inscríbete ahora</a>            </div>
+                </div>
+            </div>
+
+    <!-- Evento 2 - Imagen izquierda -->
+    <div class="evento-proximo">
+        <div class="evento-proximo-imagen">
+            <img src="img/img-index/Conferencia-anual-biblica.webp" alt="Conferencia Bíblica">
+        </div>
+        <div class="evento-proximo-contenido">
+            <span class="fecha-destacada">Todo Septiembre!</span>
+            <h4>Conferencia Bíblica Anual</h4>
+            <p>Con motivo del Mes de la Biblia en septiembre, se celebra en República Dominicana la Conferencia Bíblica Anual, un evento que busca profundizar en el estudio de la Palabra de Dios y fortalecer la fe de la congregación. Reúne a pastores, líderes e invitados especiales en teología bíblica, y ofrece enseñanzas, talleres, adoración y debates centrados en la importancia y relevancia de las Escrituras. Además de ser un espacio de aprendizaje, la conferencia promueve la unidad, el amor por la lectura bíblica y el crecimiento espiritual de la iglesia.
+</p>
+            <div class="detalles-destacados">
+                <span><i class="fas fa-clock"></i> 9:00 AM / 12:00 PM</span>
+                <span><i class="fas fa-map-marker-alt"></i> Auditorio Principal</span>
+                <span><i class="fas fa-user-friends"></i> Para todas las edades</span>
+            </div>
+            <div class="acciones-evento">
+                <a data-event-target="retiro-espiritual" href="eventos.html#conferencia-biblica"  class="btn-destacado">Programación completa</a>
+                            </div>
+        </div>
+    </div>
+    
+</div>
+</section>
+
+
+<!-- Sección Contacto -->
+<section id="contacto">
+    <div class="contacto-container">
+        <div class="formulario-box">
+            <h2>Contáctanos</h2>
+            <p>Envíanos un mensaje y nos pondremos en contacto contigo</p>
+            
+                <form id="contactoForm" class="contacto-form" action="https://formsubmit.co/felizismael5656@gmail.com" method="post">
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="nombre">Nombre completo</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Correo electrónico</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="telefono" name="telefono">
+                    <label for="telefono">Teléfono (opcional)</label>
+                </div>
+                
+                <div class="form-group">
+                    <select id="asunto" name="asunto" required>
+                        <option value=""></option>
+                        <option value="informacion">Información general</option>
+                        <option value="oracion">Petición de oración</option>
+                        <option value="eventos">Consulta sobre eventos</option>
+                        <option value="servicios">Información de servicios</option>
+                        <option value="otro">Otro asunto</option>
+                    </select>
+                    <label for="asunto">Asunto</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    <label for="mensaje">Tu mensaje</label>
+                </div>
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Modal de confirmación -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>¡Mensaje Enviado con Éxito!</h3>
+        <p>Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</p>
+        <button id="modalCloseBtn" class="btn">Aceptar</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactoForm');
+  const modal = document.getElementById('confirmationModal');
+  const closeModal = document.querySelector('.close-modal');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        isValid = false;
+        field.style.borderColor = 'red';
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+
+    if (!isValid) {
+      alert('Por favor complete todos los campos requeridos');
+      return;
+    }
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        showModal();
+        form.reset();
+      } else {
+        alert('Hubo un error al enviar el mensaje. Por favor intente nuevamente.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor intente nuevamente.');
+    });
+  });
+
+  function showModal() {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModalFunc() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  closeModal.addEventListener('click', closeModalFunc);
+  modalCloseBtn.addEventListener('click', closeModalFunc);
+  window.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      closeModalFunc();
+    }
+  });
+});
+</script>
+</script>
+    <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-col logo-col">
+            <img src="img/img-index/EYON-ADONAI-ROI.webp" alt="Logo Eyon Adonai Roi" class="footer-logo">
+            <p>Una comunidad de fe comprometida con el servicio y el amor al prójimo.</p>
+            <div class="social-links">
+                <a target="_blank" href="https://www.facebook.com/ministerioseleyon.adonairoi" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ministerioseleyon/" class="social-circle"><i class="fab fa-instagram"></i></a>
+                    <a href="
+                    https://wa.link/gavioc" class="social-circle"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Menú</h3>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca">Acerca de</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="como-llegar.html">Cómo llegar</a></li>
+                <li><a href="index.html#contacto" class="nav-link-contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Información adicional</h3>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> Calle Ing Pedro Bonilla Calle, Santo Domingo Este </li>
+                <li><i class="fas fa-envelope"></i> eleyonadonairoi@gmail.com</li>
+                <li><i class="fas fa-clock"></i>Martes 7:00PM / Jueves 7:00PM / Viernes 6:00PM / Domingos 9:00AM </li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 Eyon Adonai Roi. Todos los derechos reservados.</p>
+    </div>
+
+</footer>
+
+<script src="js/js-index/acerca-de.js"></script>
+<script src="js/js-index/carousers.js"></script>
+<script src="js/menu-hamburguesa.js"></script>
+<script src="js/js-index/fondo-inicio.js"></script>
+</body>
+</html>
