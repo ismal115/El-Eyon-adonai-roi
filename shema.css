@@ -1162,7 +1162,7 @@ a {
     font-size: 60px;
     margin-bottom: 20px;
     color: #ffeb3b;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgb(0, 241, 136);
 }
 
 .volunteer-close-modal {
@@ -1222,6 +1222,45 @@ a {
 .premium-btn:hover::after {
     animation: shine 1.5s;
 }
+
+   /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .volunteer-modal-content {
+                margin: 10% auto;
+                padding: 25px 20px;
+                width: 85%;
+            }
+            
+            .volunteer-modal-icon {
+                font-size: 40px;
+            }
+            
+            .volunteer-modal-content h3 {
+                font-size: 20px;
+            }
+            
+            .volunteer-modal-content p {
+                font-size: 14px;
+            }
+            
+            .premium-btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .volunteer-modal-content {
+                margin: 15% auto;
+                width: 90%;
+            }
+            
+            .volunteer-close-modal {
+                top: 10px;
+                right: 15px;
+                font-size: 24px;
+            }
+        }
 
 @keyframes shine {
     100% {

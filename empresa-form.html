@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/img-index/EYON-ADONAI-ROI.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="empresa-aliada.css">
+    <title>Empresa aliada - El Eyon Adonai Roi</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/img-nosotros/EYON-ADONAI-ROI.webp" alt="Logo Eyon Adonai Roi">
+            </a>
+        </div>
+                <!-- Botón Hamburguesa -->
+        <button class="hamburger" aria-label="Menú">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Acerca de</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="como-llegar.html">Cómo llegar</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- Sección del Formulario para Empresas Aliadas -->
+<section id="partner-form" class="form-section">
+    <div class="back-to-shema">
+    <a href="shema.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Volver a Shemá
+    </a>
+</div>
+    <div class="container">
+        <h2>Formulario para Empresas Aliadas</h2>
+        <p class="section-subtitle">Complete el siguiente formulario y nos pondremos en contacto para establecer una alianza estratégica</p>
+        
+<form id="partnerForm" class="partner-form" action="https://formsubmit.co/ministerioshemard@gmail.com" method="POST">
+    <!-- Campos ocultos adicionales para FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="http://127.0.0.1:5500/empresa-form.html?company-name=Bqiwdi&company-type=PyME&industry=dqwda&employees=11-50&contact-name=GRUPO+TECNO+PRO&contact-position=qwsa&contact-email=hmmrefrielectric01%40gmail.com&contact-phone=34543254234&support-type=Financiero&support-details=asdwessadad&partnership-expectations=assfz&how-heard=Redes+Sociales&terms-agreement=on">
+    <input type="hidden" name="_template" value="table">
+    
+            <div class="form-group">
+                <h3><i class="fas fa-building"></i> Información de la Empresa</h3>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="company-name">Nombre de la Empresa*</label>
+                        <input type="text" id="company-name" name="company-name" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="company-type">Tipo de Empresa*</label>
+                        <select id="company-type" name="company-type" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Privada">Privada</option>
+                            <option value="Pública">Pública</option>
+                            <option value="ONG">ONG</option>
+                            <option value="PyME">PyME</option>
+                            <option value="Startup">Startup</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="industry">Sector Industrial*</label>
+                        <input type="text" id="industry" name="industry" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="employees">Número de Empleados*</label>
+                        <select id="employees" name="employees" required>
+                            <option value="">Seleccione...</option>
+                            <option value="1-10">1-10</option>
+                            <option value="11-50">11-50</option>
+                            <option value="51-200">51-200</option>
+                            <option value="201-500">201-500</option>
+                            <option value="501+">501+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información de Contacto -->
+            <div class="form-group">
+                <h3><i class="fas fa-user-tie"></i> Información de Contacto</h3>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="contact-name">Nombre del Contacto*</label>
+                        <input type="text" id="contact-name" name="contact-name" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="contact-position">Cargo*</label>
+                        <input type="text" id="contact-position" name="contact-position" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="contact-email">Correo Electrónico*</label>
+                        <input type="email" id="contact-email" name="contact-email" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="contact-phone">Teléfono*</label>
+                        <input type="tel" id="contact-phone" name="contact-phone" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tipo de Apoyo -->
+            <div class="form-group">
+                <h3><i class="fas fa-handshake"></i> Tipo de Apoyo</h3>
+                <div class="checkbox-grid">
+                    <div class="checkbox-field">
+                        <input type="checkbox" id="support-financial" name="support-type" value="Financiero">
+                        <label for="support-financial">Apoyo Financiero (Patrocinios)</label>
+                    </div>
+                    
+                    <div class="checkbox-field">
+                        <input type="checkbox" id="support-products" name="support-type" value="Productos">
+                        <label for="support-products">Donación de Productos/Servicios</label>
+                    </div>
+                    
+                    <div class="checkbox-field">
+                        <input type="checkbox" id="support-volunteers" name="support-type" value="Voluntarios">
+                        <label for="support-volunteers">Voluntariado Corporativo</label>
+                    </div>
+                    
+                    <div class="checkbox-field">
+                        <input type="checkbox" id="support-other" name="support-type" value="Otro">
+                        <label for="support-other">Otro tipo de apoyo</label>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label for="support-details">Detalles del Apoyo Ofrecido*</label>
+                    <textarea id="support-details" name="support-details" rows="4" required></textarea>
+                </div>
+            </div>
+            
+            <!-- Información Adicional -->
+            <div class="form-group">
+                <h3><i class="fas fa-info-circle"></i> Información Adicional</h3>
+                <div class="form-field">
+                    <label for="partnership-expectations">¿Qué expectativas tiene de esta alianza con el Ministerio Shemá?*</label>
+                    <textarea id="partnership-expectations" name="partnership-expectations" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-field">
+                    <label for="how-heard">¿Cómo se enteró de nosotros?</label>
+                    <select id="how-heard" name="how-heard">
+                        <option value="">Seleccione...</option>
+                        <option value="Redes Sociales">Redes Sociales</option>
+                        <option value="Recomendación">Recomendación</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Búsqueda en Internet">Búsqueda en Internet</option>
+                        <option value="Medios de Comunicación">Medios de Comunicación</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Términos y Envío -->
+            <div class="form-footer">
+                <div class="form-field checkbox-field">
+                    <input type="checkbox" id="terms-agreement" name="terms-agreement" required>
+                    <label for="terms-agreement">Acepto los <a href="#terms">términos y condiciones</a> y autorizo el tratamiento de mis datos*</label>
+                </div>
+                
+                <button type="submit" class="join-btn partner-btn">
+                    <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Modal para Empresas Aliadas -->
+<div id="partnerModal" class="partner-modal">
+    <div class="partner-modal-content">
+        <span class="partner-close-modal">&times;</span>
+        
+        <div class="partner-modal-header">
+            <div class="partner-modal-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Solicitud recibida</h3>
+        </div>
+        
+        <div class="partner-modal-body">
+            <p>Gracias por su interés en establecer una alianza con <strong>Ministerio Shemá</strong>. Hemos recibido su solicitud y nuestro equipo de relaciones corporativas se pondrá en contacto con usted en un plazo máximo de 48 horas.</p>
+            
+            <div class="partner-modal-details">
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>corporate@shemaministry.org</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+1 (234) 567-8900</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="partner-modal-footer">
+            <button id="partnerModalBtn" class="partner-modal-btn">Entendido</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Estilos del Modal - Profesional Minimalista */
+    .partner-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .partner-modal-content {
+        position: relative;
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 0;
+        width: 90%;
+        max-width: 450px;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        font-family: 'Segoe UI', Roboto, sans-serif;
+        overflow: hidden;
+        animation: modalFadeIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    /* Animación de entrada */
+    @keyframes modalFadeIn {
+        from { opacity: 0; transform: translateY(-20px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    /* Header del Modal */
+    .partner-modal-header {
+        background-color: #d32f2f;
+        color: white;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+    }
+    
+    .partner-modal-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+        color: white;
+    }
+    
+    .partner-modal-header h3 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Cuerpo del Modal */
+    .partner-modal-body {
+        padding: 30px;
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    .partner-modal-body p {
+        margin-bottom: 25px;
+        font-size: 15px;
+    }
+    
+    .partner-modal-details {
+        background-color: #f9f9f9;
+        border-radius: 6px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .detail-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    
+    .detail-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .detail-item i {
+        color: #d32f2f;
+        width: 25px;
+        font-size: 14px;
+    }
+    
+    .detail-item span {
+        font-size: 14px;
+        color: #444;
+    }
+    
+    /* Footer del Modal */
+    .partner-modal-footer {
+        padding: 0 30px 30px;
+        text-align: center;
+    }
+    
+    .partner-modal-btn {
+        background-color: #d32f2f;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .partner-modal-btn:hover {
+        background-color: #b71c1c;
+        transform: translateY(-2px);
+    }
+    
+    /* Botón de cerrar */
+    .partner-close-modal {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        transition: color 0.3s;
+        z-index: 1;
+    }
+    
+    .partner-close-modal:hover {
+        color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 480px) {
+        .partner-modal-content {
+            margin: 10% auto;
+            width: 95%;
+        }
+        
+        .partner-modal-header {
+            padding: 20px;
+        }
+        
+        .partner-modal-body {
+            padding: 20px;
+        }
+        
+        .partner-modal-footer {
+            padding: 0 20px 20px;
+        }
+        
+        .partner-modal-btn {
+            max-width: none;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // 1. Configuración del Modal
+    const modal = document.getElementById('partnerModal');
+    const closeModal = document.querySelector('.partner-close-modal');
+    const modalBtn = document.getElementById('partnerModalBtn');
+    
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+    
+    if (modalBtn) {
+        modalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            // Opcional: Redirigir después de cerrar
+            // window.location.href = '/gracias.html';
+        });
+    }
+    
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // 2. Configuración del Formulario
+    const partnerForm = document.getElementById('partnerForm');
+    
+    if (partnerForm) {
+        partnerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validación de términos (versión optimizada)
+            const termsAgreement = document.getElementById('terms-agreement');
+            if (!termsAgreement || !termsAgreement.checked) {
+                alert('Debe aceptar los términos y condiciones');
+                return;
+            }
+            
+            // Mostrar modal de carga (opcional)
+            modal.style.display = 'block';
+            modal.querySelector('.partner-modal-body').innerHTML = `
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Enviando su solicitud...</p>
+                </div>
+            `;
+            
+            // Envío con FormSubmit
+            const formData = new FormData(partnerForm);
+            
+            fetch(partnerForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Mostrar mensaje de éxito
+                    modal.querySelector('.partner-modal-body').innerHTML = `
+                        <div class="partner-modal-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>¡Solicitud enviada!</h3>
+                        <p>Gracias por su interés en establecer una alianza con <strong>Ministerio Shemá</strong>.</p>
+                        <div class="partner-modal-details">
+                            <div class="detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>corporate@shemaministry.org</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+1 (234) 567-8900</span>
+                            </div>
+                        </div>
+                    `;
+                    partnerForm.reset();
+                } else {
+                    throw new Error('Error en el envío');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                modal.querySelector('.partner-modal-body').innerHTML = `
+                    <div class="partner-modal-icon error">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3>Error en el envío</h3>
+                    <p>Ocurrió un error al enviar el formulario. Por favor intente nuevamente.</p>
+                    <button onclick="location.reload()" class="partner-modal-btn">Reintentar</button>
+                `;
+            });
+        });
+    }
+});
+</script>
+    
+ 
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <img src="img/img-nosotros/EYON-ADONAI-ROI.webp" alt="Logo Eyon Adonai Roi" class="footer-logo">
+                <p>Una comunidad de fe comprometida con el servicio y el amor al prójimo.</p>
+                <div class="social-links">
+                <a target="_blank" href="https://www.facebook.com/ministerioseleyon.adonairoi" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ministerioseleyon/" class="social-circle"><i class="fab fa-instagram"></i></a>
+                    <a href="
+                    https://wa.link/gavioc" class="social-circle"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Menú</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Acerca de</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="como-llegar.html">Cómo llegar</a></li>
+                    <li><a href="index.html#contacto" class="nav-link-contacto">Contacto</a><li>
+                </ul>
+            </div>
+        <div class="footer-col">
+            <h3>Información adicional</h3>
+            <ul class="contact-info">
+                <li><i class="fas fa-map-marker-alt"></i> Calle Ing Pedro Bonilla Calle, Santo Domingo Este </li>
+                <li><i class="fas fa-envelope"></i> eleyonadonairoi@gmail.com</li>
+                <li><i class="fas fa-clock"></i>Martes 7:00PM / Jueves 7:00PM / Viernes 6:00PM / Domingos 9:00AM </li>
+            </ul>
+        </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Eyon Adonai Roi. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+    <SCRIpt src="js/menu-hamburguesa.js"></SCRIpt>
