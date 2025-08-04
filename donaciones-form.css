@@ -20,6 +20,7 @@
             line-height: 1.6;
             color: #333;
                 color: var(--text-dark);
+            background-color: #f9f9f9;
 
         }
         
@@ -174,12 +175,53 @@ nav {
     }
 }
 
+/* Estilos para el botón de volver */
+.back-to-shema {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-top: 100px;
+    z-index: 10;
+}
 
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 2px solid #d32f2f;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-button:hover {
+    background-color: #d32f2f;
+    color: white;
+    transform: translateX(-5px);
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .back-to-shema {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .back-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
 
 /* Estilos generales */
 .donation-section {
+  margin-top: 140px;
   padding: 50px 0;
-  background-color: #f9f9f9;
   font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
