@@ -324,9 +324,8 @@ nav {
 
 @media (max-width: 768px) {
     .hero-carousel {
-        height: 70vh;
+        height: 100vh;
         min-height: 350px;
-        margin-top: 70px; /* Header más pequeño en mobile */
     }
     
     .slide-content {
@@ -367,7 +366,7 @@ nav {
 /* Pequeños móviles */
 @media (max-width: 480px) {
     .hero-carousel {
-        height: 60vh;
+        height: 100vh;
         min-height: 300px;
     }
     
