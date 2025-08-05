@@ -1,0 +1,302 @@
+<link rel="stylesheet" href="inscripcion-evento.css">
+
+<section class="event-registration">
+  <div class="container">
+    <h2>Inscripción al Evento</h2>
+    <p class="subtitle">Complete el formulario para reservar su participación</p>
+    
+    <form id="eventForm" class="event-form">
+      <!-- Información Personal -->
+      <div class="form-section">
+        <h3><i class="fas fa-user"></i> Información Personal</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Nombre Completo*</label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico*</label>
+            <input autocomplete="email" type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono*</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Edad</label>
+            <input type="number" id="age" name="age" min="1">
+          </div>
+        </div>
+      </div>
+
+      <!-- Detalles del Evento -->
+      <div class="form-section">
+        <h3><i class="fas fa-calendar-alt"></i> Detalles del Evento</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="eventType">Tipo de Evento*</label>
+            <select id="eventType" name="eventType" required>
+              <option value="">Seleccione...</option>
+              <option value="conferencia">Conferencia</option>
+              <option value="taller">Taller</option>
+              <option value="retiro">Retiro Espiritual</option>
+              <option value="concierto">Concierto</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="eventDate">Fecha del Evento*</label>
+            <select id="eventDate" name="eventDate" required>
+              <option value="">Seleccione...</option>
+              <!-- Opciones se llenarán con JavaScript -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="participants">Número de Personas*</label>
+            <input type="number" id="participants" name="participants" min="1" max="10" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requerimientos Especiales -->
+      <div class="form-section">
+        <h3><i class="fas fa-clipboard-list"></i> Requerimientos Especiales</h3>
+        <div class="form-group">
+          <label for="requirements">¿Necesitas algo especial? (accesibilidad, dieta, etc.)</label>
+          <textarea id="requirements" name="requirements" rows="3"></textarea>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="transport" name="transport">
+          <label for="transport">Necesito transporte desde el punto de encuentro</label>
+        </div>
+      </div>
+
+      <!-- Método de Pago -->
+      <div class="form-section payment-section">
+        <h3><i class="fas fa-credit-card"></i> Método de Pago</h3>
+        <div class="payment-options">
+          <div class="payment-option">
+            <input type="radio" id="payLater" name="paymentMethod" value="later" checked>
+            <label for="payLater">
+              <i class="fas fa-money-bill-wave"></i>
+              <span>Pagar en el evento</span>
+            </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="payOnline" name="paymentMethod" value="online">
+            <label for="payOnline">
+              <i class="fab fa-cc-paypal"></i>
+              <span>Pagar ahora con PayPal</span>
+            </label>
+          </div>
+        </div>
+        <div id="paypalContainer" class="paypal-container" style="display:none;"></div>
+      </div>
+
+      <!-- Términos y Condiciones -->
+      <div class="form-group terms-group">
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Acepto los <a href="#" target="_blank">términos y condiciones</a>*</label>
+      </div>
+
+      <!-- Botón de Envío -->
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Enviar Inscripción
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Modal de Confirmación -->
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-icon success">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h3>¡Inscripción Exitosa!</h3>
+    <p id="confirmationMessage"></p>
+    <button id="closeModal" class="modal-btn">Aceptar</button>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // 1. Cargar fechas de eventos dinámicamente
+  const eventDates = {
+    conferencia: ['2023-11-15', '2023-12-10'],
+    taller: ['2023-11-20', '2023-12-05'],
+    retiro: ['2023-12-15', '2024-01-10'],
+    concierto: ['2023-12-20']
+  };
+
+  const eventTypeSelect = document.getElementById('eventType');
+  const eventDateSelect = document.getElementById('eventDate');
+
+  eventTypeSelect.addEventListener('change', function() {
+    eventDateSelect.innerHTML = '<option value="">Seleccione...</option>';
+    
+    const selectedEvent = this.value;
+    if (selectedEvent && eventDates[selectedEvent]) {
+      eventDates[selectedEvent].forEach(date => {
+        const option = document.createElement('option');
+        option.value = date;
+        option.textContent = new Date(date).toLocaleDateString('es-ES', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+        eventDateSelect.appendChild(option);
+      });
+    }
+  });
+
+  // 2. Mostrar/ocultar PayPal según método de pago
+  const payOnlineRadio = document.getElementById('payOnline');
+  const paypalContainer = document.getElementById('paypalContainer');
+
+  payOnlineRadio.addEventListener('change', function() {
+    if (this.checked) {
+      paypalContainer.style.display = 'block';
+      initPayPalButton();
+    } else {
+      paypalContainer.style.display = 'none';
+    }
+  });
+
+  // 3. Inicializar PayPal Button
+  function initPayPalButton() {
+    if (window.paypal && !document.getElementById('paypal-button-container')) {
+      paypalContainer.innerHTML = '<div id="paypal-button-container"></div>';
+      
+      paypal.Buttons({
+        style: {
+          color: 'gold',
+          shape: 'pill',
+          label: 'pay',
+          height: 40
+        },
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: calculateTotal().toFixed(2)
+              },
+              description: 'Inscripción a evento'
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            submitForm(true);
+          });
+        },
+        onError: function(err) {
+          console.error('PayPal Error:', err);
+          alert('Ocurrió un error con el pago. Por favor intenta nuevamente.');
+        }
+      }).render('#paypal-button-container');
+    }
+  }
+
+  // 4. Calcular total (para pagos)
+  function calculateTotal() {
+    const participants = parseInt(document.getElementById('participants').value) || 1;
+    const eventType = document.getElementById('eventType').value;
+    
+    // Precios según tipo de evento (puedes personalizar)
+    const prices = {
+      conferencia: 50,
+      taller: 30,
+      retiro: 100,
+      concierto: 25
+    };
+    
+    return (prices[eventType] || 0) * participants;
+  }
+
+  // 5. Manejar envío del formulario
+  const eventForm = document.getElementById('eventForm');
+  const confirmationModal = document.getElementById('confirmationModal');
+  const confirmationMessage = document.getElementById('confirmationMessage');
+
+  eventForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validar términos
+    if (!document.getElementById('terms').checked) {
+      alert('Debes aceptar los términos y condiciones');
+      return;
+    }
+    
+    // Si eligió pagar con PayPal, el envío se maneja allí
+    if (payOnlineRadio.checked && !window.paypalProcessed) {
+      return;
+    }
+    
+    // Envío normal (sin PayPal o cuando PayPal ya procesó)
+    submitForm(false);
+  });
+
+  function submitForm(paid) {
+    // Obtener datos del formulario
+    const formData = new FormData(eventForm);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Aquí normalmente enviarías los datos a tu servidor
+    // Esta es una simulación con localStorage
+    const registrations = JSON.parse(localStorage.getItem('eventRegistrations') || '[]');
+    registrations.push({
+      ...data,
+      paid: paid,
+      total: paid ? calculateTotal() : 0,
+      registrationDate: new Date().toISOString()
+    });
+    localStorage.setItem('eventRegistrations', JSON.stringify(registrations));
+    
+    // Mostrar confirmación
+    showConfirmation(data, paid);
+  }
+
+  function showConfirmation(data, paid) {
+    let message = `
+      <p>Gracias <strong>${data.fullName}</strong> por inscribirte al evento.</p>
+      <p>Hemos registrado ${data.participants} persona(s) para el ${data.eventType}.</p>
+    `;
+    
+    if (paid) {
+      message += `<p>Tu pago de $${calculateTotal().toFixed(2)} ha sido procesado exitosamente.</p>`;
+    } else {
+      message += `<p>El pago se realizará en el evento.</p>`;
+    }
+    
+    if (data.requirements) {
+      message += `<p>Hemos tomado nota de tus requerimientos especiales.</p>`;
+    }
+    
+    message += `<p>Te hemos enviado los detalles a <strong>${data.email}</strong>.</p>`;
+    
+    confirmationMessage.innerHTML = message;
+    confirmationModal.style.display = 'block';
+    eventForm.reset();
+  }
+
+  // 6. Cerrar modal
+  document.querySelector('.close-modal').addEventListener('click', function() {
+    confirmationModal.style.display = 'none';
+  });
+  
+  document.getElementById('closeModal').addEventListener('click', function() {
+    confirmationModal.style.display = 'none';
+  });
+  
+  window.addEventListener('click', function(e) {
+    if (e.target === confirmationModal) {
+      confirmationModal.style.display = 'none';
+    }
+  });
+});
+
+// Incluir SDK de PayPal (añade esto en tu HTML)
+// <script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
+</script>

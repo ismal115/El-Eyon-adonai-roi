@@ -1,80 +1,75 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Elementos básicos
+    const carousel = document.querySelector('.hero-carousel');
     const slides = document.querySelectorAll('.carousel-slide');
-    const indicators = document.querySelectorAll('.indicator');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
-    let currentSlide = 0;
-    let slideInterval;
-    const intervalTime = 5000; // 5 segundos
-
-    // Función para cambiar de slide
-    function goToSlide(n) {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (!slides.length || !carousel) {
+        console.error('Elementos del carrusel no encontrados');
+        return;
     }
 
-    // Función para siguiente slide
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    // Función para mostrar slide
+    function showSlide(index) {
+        // Asegúrate que el índice esté dentro de los límites
+        index = (index + slides.length) % slides.length;
+        
+        // Oculta todos los slides
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        
+        // Desactiva todos los indicadores
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+        });
+        
+        // Muestra el slide actual
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+
+    // Navegación
     function nextSlide() {
-        goToSlide(currentSlide + 1);
+        showSlide(currentIndex + 1);
     }
 
-    // Función para slide anterior
     function prevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-
-    // Iniciar autoplay
-    function startSlide() {
-        slideInterval = setInterval(nextSlide, intervalTime);
-    }
-
-    // Pausar autoplay cuando el usuario interactúa
-    function pauseSlide() {
-        clearInterval(slideInterval);
+        showSlide(currentIndex - 1);
     }
 
     // Event listeners
-    nextBtn.addEventListener('click', function() {
-        pauseSlide();
-        nextSlide();
-        startSlide();
-    });
-
-    prevBtn.addEventListener('click', function() {
-        pauseSlide();
-        prevSlide();
-        startSlide();
-    });
-
-    // Event listeners para los indicadores
+    nextBtn?.addEventListener('click', nextSlide);
+    prevBtn?.addEventListener('click', prevSlide);
+    
+    // Indicadores
     indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function() {
-            pauseSlide();
-            goToSlide(index);
-            startSlide();
+        indicator.addEventListener('click', () => {
+            showSlide(index);
         });
     });
 
-    // Pausar al tocar el slide en móviles
-    slides.forEach(slide => {
-        slide.addEventListener('touchstart', pauseSlide);
-        slide.addEventListener('touchend', startSlide);
-    });
-
-    // Iniciar el carrusel
-    startSlide();
-
-    // Ajustar altura del carrusel al cargar y redimensionar
-    function adjustCarouselHeight() {
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const carousel = document.querySelector('.hero-carousel');
-        carousel.style.height = `calc(100vh - ${headerHeight}px)`;
+    // Auto slide
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
     }
 
-    // Ejecutar al cargar y redimensionar
-    window.addEventListener('load', adjustCarouselHeight);
-    window.addEventListener('resize', adjustCarouselHeight);
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    // Iniciar
+    showSlide(0);
+    startAutoSlide();
+    
+    // Pausar al interactuar
+    carousel?.addEventListener('mouseenter', stopAutoSlide);
+    carousel?.addEventListener('mouseleave', startAutoSlide);
 });
