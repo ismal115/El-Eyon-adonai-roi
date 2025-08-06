@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos básicos
+    // Elementos del carrusel
     const carousel = document.querySelector('.hero-carousel');
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
     const indicators = document.querySelectorAll('.indicator');
     
+    // Validación de elementos
     if (!slides.length || !carousel) {
         console.error('Elementos del carrusel no encontrados');
         return;
@@ -13,27 +14,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentIndex = 0;
     let autoSlideInterval;
+    let isChangingSlide = false; // Bandera para controlar cambios en progreso
 
-    // Función para mostrar slide
-    function showSlide(index) {
-        // Asegúrate que el índice esté dentro de los límites
+    // Función para actualizar indicadores
+    function updateIndicators(index) {
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    // Función principal para mostrar slides
+    function showSlide(index, isManual = false) {
+        if (isChangingSlide) return;
+        isChangingSlide = true;
+        
+        // Asegurar que el índice esté dentro de los límites
         index = (index + slides.length) % slides.length;
         
-        // Oculta todos los slides
-        slides.forEach(slide => {
-            slide.classList.remove('active');
-        });
+        // Ocultar todos los slides
+        slides.forEach(slide => slide.classList.remove('active'));
         
-        // Desactiva todos los indicadores
-        indicators.forEach(indicator => {
-            indicator.classList.remove('active');
-        });
-        
-        // Muestra el slide actual
+        // Mostrar el slide actual
         slides[index].classList.add('active');
-        indicators[index].classList.add('active');
+        
+        // Actualizar indicadores
+        updateIndicators(index);
         
         currentIndex = index;
+        
+        // Resetear la bandera después de un breve retraso
+        setTimeout(() => {
+            isChangingSlide = false;
+        }, 50);
     }
 
     // Navegación
@@ -45,31 +57,58 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentIndex - 1);
     }
 
-    // Event listeners
-    nextBtn?.addEventListener('click', nextSlide);
-    prevBtn?.addEventListener('click', prevSlide);
+    // Event listeners para controles manuales
+    nextBtn?.addEventListener('click', () => {
+        stopAutoSlide();
+        nextSlide();
+        restartAutoSlide();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        stopAutoSlide();
+        prevSlide();
+        restartAutoSlide();
+    });
     
-    // Indicadores
+    // Event listeners para indicadores
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
-            showSlide(index);
+            stopAutoSlide();
+            showSlide(index, true);
+            restartAutoSlide();
         });
     });
 
-    // Auto slide
+    // Control del auto slide
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 4000);
+        if (!autoSlideInterval) {
+            autoSlideInterval = setInterval(() => {
+                nextSlide();
+            }, 4000);
+        }
     }
 
     function stopAutoSlide() {
         clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
     }
 
-    // Iniciar
-    showSlide(0);
-    startAutoSlide();
-    
-    // Pausar al interactuar
-    carousel?.addEventListener('mouseenter', stopAutoSlide);
-    carousel?.addEventListener('mouseleave', startAutoSlide);
+    function restartAutoSlide() {
+        stopAutoSlide();
+        setTimeout(startAutoSlide, 10000); // Reanudar después de 10 segundos
+    }
+
+    // Inicialización
+    function initCarousel() {
+        showSlide(0);
+        startAutoSlide();
+        
+        // Pausar al interactuar
+        carousel?.addEventListener('mouseenter', stopAutoSlide);
+        carousel?.addEventListener('mouseleave', startAutoSlide);
+        carousel?.addEventListener('touchstart', stopAutoSlide);
+        carousel?.addEventListener('touchend', restartAutoSlide);
+    }
+
+    initCarousel();
 });

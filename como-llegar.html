@@ -302,69 +302,7 @@
 
     </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Solo ejecutar si hay un hash en la URL
-    if(window.location.hash) {
-        const targetId = window.location.hash;
-        const targetElement = document.querySelector(targetId);
-        
-        if(targetElement) {
-            // Primero lleva la página al inicio
-            window.scrollTo(0, 0);
-            
-            // Luego desplaza suavemente después de un breve retraso
-            setTimeout(() => {
-                // Calcula la posición considerando el header fijo
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight - 20; // 20px de margen
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Resaltar la sección (opcional)
-                targetElement.style.boxShadow = '0 0 0 4px rgba(198, 198, 89, 0.3)';
-                setTimeout(() => {
-                    targetElement.style.boxShadow = 'none';
-                }, 2000);
-            }, 50); // Pequeño retraso para asegurar que la página está lista
-        }
-    }
-});
-</script>
 
-<script>
-// Scroll suave al cargar la página con hash
-    document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si hay un hash en la URL
-    if(window.location.hash === '#horarios') {
-        // Esperar un breve momento para asegurar que la página está renderizada
-        setTimeout(() => {
-        const targetElement = document.getElementById('horarios');
-        if(targetElement) {
-            // Calcular posición considerando el header fijo
-            const headerHeight = document.querySelector('header').offsetHeight;
-            const targetPosition = targetElement.offsetTop - headerHeight - 20; // 20px de margen
-            
-            // Desplazamiento suave
-            window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-            });
-            
-            // Resaltar temporalmente la sección (opcional)
-            targetElement.style.transition = 'box-shadow 0.3s';
-            targetElement.style.boxShadow = '0 0 0 4px rgba(198, 198, 89, 0.3)';
-            setTimeout(() => {
-            targetElement.style.boxShadow = 'none';
-            }, 2000);
-        }
-        }, 100);
-    }
-    });
-</script>
 
     <script src="js/menu-hamburguesa.js"></script>
 
