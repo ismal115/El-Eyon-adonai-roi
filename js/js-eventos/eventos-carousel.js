@@ -32,9 +32,4 @@
             });
         });
         
-        // Auto-avance cada 5 segundos
-        setInterval(() => {
-            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        }, 5000);
     });
