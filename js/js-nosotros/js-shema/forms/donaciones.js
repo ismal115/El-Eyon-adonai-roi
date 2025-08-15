@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function showDonationError() {
     document.getElementById('donationMessage').innerHTML = `
+      <h3>Donacion fallida</h3>
       <p style="color: #d32f2f;">Ocurrió un error al procesar tu donación.</p>
       <p>Por favor intenta nuevamente o contáctanos.</p>
     `;
